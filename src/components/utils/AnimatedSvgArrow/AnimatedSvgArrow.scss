@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+
+.animatedArrow {
+
+    path {
+        transition-property: stroke-dashoffset;
+        transition-timing-function: linear;
+    }
+
+    path:first-child {
+        stroke-dasharray: 900;
+        stroke-dashoffset: 900;
+        transition-duration: 1.2s;
+    }
+
+    path:last-child {
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+        transition-delay: 1.2s;
+        transition-duration: 0.3s;
+    }
+
+    &.animatedArrow__visible {
+
+        path {
+            stroke-dashoffset: 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.ctaBtn {
+    display: inline-block;
+    padding: 0.688rem 0;
+    text-align: center;
+    color: $clr-white;
+    font-family: $ff-mono;
+    background-color: $clr-yellow-dark;
+    border: 3px solid $clr-yellow-dark;
+    min-width: 180px;
+    
+    transition: color $transition-regular, background-color $transition-regular;
+
+    &:hover {
+        color: $clr-yellow-dark;
+        background-color: transparent;
+    }
+}

@@ -1,0 +1,65 @@
+@import '../../../styles/variables.scss';
+
+
+.signUp {
+    background-color: $clr-gray-700;
+    background-image: url('../../../assets/patterns/semi-circles.svg');
+    background-repeat: no-repeat;
+    background-position: right -170px bottom;
+    padding: 5.5rem 0;
+
+    @media (min-width: $tablet) {
+        padding: 3.875rem 0;
+        background-position: calc(50% - 30px) bottom;
+    }
+
+    @media (min-width: $desktop) {
+        padding: 6.25rem 0;
+        background-position: calc(50% + 305px) bottom;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+
+        @media (min-width: $desktop) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        color: $clr-white;
+        text-align: center;
+        max-width: 310px;
+
+        @media (min-width: $tablet) {
+            max-width: 460px;
+        }
+
+        @media (min-width: $desktop) {
+            text-align: left;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+
+        @media (min-width: $desktop) {
+            gap: 1.125rem;
+        }
+
+        &-item {
+            height: 40px;
+
+            @media (min-width: $desktop) {
+                height: 56px;
+            }
+        }
+    }
+}

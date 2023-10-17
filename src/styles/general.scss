@@ -1,0 +1,129 @@
+@import './variables.scss';
+
+body {
+    font-family: $ff-lexend;
+    font-size: $fs-regular;
+    line-height: 1.67;
+    font-weight: $fw-regular;
+    color: $clr-gray-500;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: $clr-gray-700;
+    font-weight: $fw-bold;
+    font-family: $ff-mono;
+}
+
+h1 {
+    font-size: $fs-header-m;
+    line-height: 1;
+    letter-spacing: -1.8px;
+
+    @media (min-width: $tablet) {
+        font-size: $fs-header-xl;
+        letter-spacing: -2.5px;
+    }
+}
+
+h2 {
+    font-size: $fs-header-s;
+    line-height: 1;
+    letter-spacing: -1.4px;
+
+    @media (min-width: $tablet) {
+        font-size: $fs-header-l;
+        letter-spacing: -2.1px; 
+    }
+}
+
+h3 {
+     font-size: $fs-header-xs;
+     line-height: 1.16;
+     letter-spacing: -1px;
+
+     @media (min-width: $tablet) {
+        font-size: $fs-header-m;
+        line-height: 1.2;
+        letter-spacing: -1.8px;
+     }
+}
+
+h4 {
+    font-size: $fs-header-xs;
+    line-height: 1.16;
+    letter-spacing: -1px;
+}
+
+h5 {
+    font-size: 1.125rem;
+    line-height: 1.33;
+    letter-spacing: -0.8px;
+
+    @media (min-width: $tablet) {
+        font-size: $fs-header-xs;
+        line-height: 1.16;
+        letter-spacing: -1px;
+    }
+}
+
+.line {
+    max-width: none;
+    position: absolute;
+}
+
+.arrow {
+    max-width: none;
+    position: absolute;
+    height: 150px;
+
+    &.bottom.right {
+        bottom: 0; 
+        right: -425px;
+
+        @media (min-width: $tablet) {
+            right: -100px;
+        }
+
+        @media (min-width: $desktop) {
+            right: -165px;
+        }
+    }
+
+    &.top.left {
+        top: 0;
+        left: -190px;
+
+        @media (min-width: $tablet) {
+            left: -200px;
+        }
+
+        @media (min-width: $desktop) {
+            left: -260px;
+        }
+    }
+
+    &.top.right {
+        top: 0;
+        right: -550px;
+
+        @media (min-width: $tablet) {
+            top: 80px;
+            right: -480px;
+        }
+
+        @media (min-width: $desktop) {
+            right: -545px;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+$clr-yellow-dark: rgba(252, 183, 43, 1);
+$clr-yellow-light: rgba(255, 244, 223, 1);
+$clr-gray-100: rgba(242, 245, 249, 1);
+$clr-gray-300: rgba(229, 236, 244, 1);
+$clr-gray-500: rgba(147, 156, 170, 1);
+$clr-gray-700: rgba(73, 85, 103, 1);
+$clr-gray-900: rgba(51, 58, 68, 1);
+$clr-white: rgba(255, 255, 255, 1);
+
+
+$ff-lexend: 'Lexend Deca', sans-serif;
+$ff-mono: 'Space Mono', monospace;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+$fs-regular: 0.938rem;
+
+$fs-header-xl: 3.5rem;
+$fs-header-l: 3rem;
+$fs-header-m: 2.5rem;
+$fs-header-s: 2rem;
+$fs-header-xs: 1.5rem; 
+$fs-header-xxs: 1.25rem;
+
+$tablet: 768px;
+$upToTablet: calc($tablet - 1px);
+$desktop: 1024px;
+$desktop-l: 1200px;
+
+$transition-regular: 0.3s;
+$transition-lazy: 0.6s;

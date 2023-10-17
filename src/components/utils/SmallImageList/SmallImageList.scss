@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+
+.smallImageList {
+    margin-bottom: 9rem;
+
+    @media (min-width: $tablet) {
+        margin-bottom: 7.5rem;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        @media (min-width: $tablet) {
+            margin-bottom: 6.5rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+
+        @media (min-width: $desktop) {
+            flex-direction: row;
+            gap: 1.875rem;
+        }
+    }
+}

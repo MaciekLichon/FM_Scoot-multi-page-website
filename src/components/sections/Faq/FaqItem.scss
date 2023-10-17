@@ -1,0 +1,51 @@
+@import '../../../styles/variables.scss';
+
+.faqItem {
+    background-color: $clr-gray-100;
+    padding: 2rem 1.75rem 2rem 2rem;
+
+    transition: background-color $transition-regular;
+
+    @media (min-width: $tablet) {
+        padding: 2rem 2rem 2rem 2.5rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        &-chevron {
+            transition: transform $transition-regular;
+        }
+    }
+
+    &__answer {
+        display: grid;
+        grid-template-rows: 0fr;
+    
+        transition: grid-template-rows $transition-regular;
+
+        & > div {
+            overflow: hidden;
+        }
+
+        &-text {
+            padding-top: 1.5rem;
+            color: $clr-gray-700;
+        }
+    }
+
+    &:hover {
+        background-color: $clr-yellow-light;
+    }
+
+    &:hover &__answer {
+        grid-template-rows: 1fr;
+    }
+
+    &:hover &__header-chevron {
+        transform: rotateX(180deg);
+    }
+}

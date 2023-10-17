@@ -1,0 +1,13 @@
+@import '../../../styles/variables.scss';
+
+.faq {
+    margin-bottom: 7.5rem;
+
+    @media (min-width: $desktop) {
+        margin-bottom: 10rem;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

@@ -1,0 +1,217 @@
+@import '../../../styles/variables.scss';
+
+// pixels used instead of rem to lock the map indicators in place 
+
+.map {
+    margin: 4.5rem 0;
+
+    @media (min-width: $desktop) {
+        margin: 9rem 0 7.5rem 0;
+    }
+
+    @media (min-width: $desktop) {
+        margin: 7.5rem 0;
+    }
+
+    &__world {
+        position: relative;
+
+        @media (min-width: $tablet) {
+            max-width: 690px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: $desktop-l) {
+            max-width: none;
+            margin: 0;
+        }
+
+        &-labels {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @media (min-width: $tablet) {
+                margin: 0;
+            }
+
+            &-item {
+
+                /* ----- STYLING LABEL START ----- */
+
+                background-color: $clr-yellow-light;
+                height: 72px;
+                display: grid;
+                place-items: center;
+                transition: background-color $transition-regular;
+
+                &:hover {
+                    background-color: $clr-yellow-dark;
+                }
+
+                &:hover::after {
+                    background-color: $clr-yellow-dark;
+                }
+
+                @media (min-width: $tablet) {
+                    height: 32px;
+                    width: 120px;
+                    font-size: 13px;
+                    line-height: 2.15;
+                    letter-spacing: -0.6px;
+                    position: absolute;
+                    // background-color: $clr-yellow-dark;
+                    // pointer-events: none;
+
+                    &[data-location="new york"] {
+                        top: 15.43%;
+                        left: 14.22%;
+                    }
+                    &[data-location="london"] {
+                        top: 7.42%;
+                        left: 36%;
+                    }
+                    &[data-location="yokohama"] {
+                        top: 19.29%;
+                        left: 76.92%;
+                    }
+                    &[data-location="jakarta"] {
+                        top: 50.15%;
+                        left: 70%;
+                    }
+                }
+
+                @media (min-width: $desktop-l) {
+                    height: 82px;
+                    width: 190px;
+                    font-size: 24px;
+                    line-height: 1.16px;
+                    letter-spacing: -1px;
+
+                    &[data-location="new york"] {
+                        top: 10%;
+                        left: 15%;
+                    }
+                    &[data-location="london"] {
+                        top: 3%;
+                        left: 36%;
+                    }
+                    &[data-location="yokohama"] {
+                        top: 14.4%;
+                        left: 77.5%;
+                    }
+                    &[data-location="jakarta"] {
+                        top: 45%;
+                        left: 70.18%;
+                    }
+                }
+
+                /* ----- STYLING LABEL END ----- */
+
+                /* ----- STYLING INDICATORS START ----- */
+
+                @media (max-width: $upToTablet) {
+                    &[data-location="new york"]::after {
+                        top: calc((100% - 367px) / 4.61);
+                        left: 22.5%;
+                    }
+                    &[data-location="london"]::after {
+                        top: calc((100% - 376px) / 6);
+                        left: 42.5%;
+                    }
+                    &[data-location="yokohama"]::after {
+                        top: calc((100% - 376px) / 3.57);
+                        left: 84%;
+                    }
+                    &[data-location="jakarta"]::after {
+                        top: calc((100% - 376px) / 1.75);
+                        left: 76.2%;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 16px;
+                    aspect-ratio: 1/1;
+                    background-color: $clr-yellow-light;
+                    border: 1px solid $clr-yellow-dark;
+                    border-radius: 50%;
+                    top: 0;
+                    left: 0;
+    
+                    transition: background-color $transition-regular;
+
+                    @media (min-width: $tablet) {
+                        width: 12px;
+                        height: 12px;
+                        border: none;
+                        // background-color: $clr-yellow-dark;
+                        border-radius: 0;
+                        bottom: -6px;
+                        left: 50%;
+                        top: unset;
+                        transform: translateX(-50%) rotate(45deg);
+                    }
+
+                    @media (min-width: $desktop-l) {
+                        width: 16px;
+                        height: 16px;
+                        bottom: -8px;
+                    }
+                }
+
+                /* ----- STYLING INDICATORS END ----- */
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 72px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+
+        @media (min-width: $tablet) {
+            margin-top: 64px;
+            gap: 40px;
+        }
+
+        @media (min-width: $desktop-l) {
+            margin-top: 120px;
+            flex-direction: row;
+            text-align: left;
+            gap: 30px;
+        }
+    }
+
+    &__title {
+        max-width: 320px;
+
+        @media (min-width: $tablet) {
+            max-width: 450px;
+        }
+
+        @media (min-width: $desktop-l) {
+            max-width: 350px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__text {
+        max-width: 570px;
+
+        @media (min-width: $desktop-l) {
+            max-width: 450px;
+        }
+    }
+
+    .ctaBtn {
+        @media (min-width: $desktop-l) {
+            margin-left: auto;
+        }
+    }
+}

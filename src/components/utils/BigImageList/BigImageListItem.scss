@@ -1,0 +1,102 @@
+@import '../../../styles/variables.scss';
+
+.bigListItem {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+
+    @media (min-width: $tablet) {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $desktop) {
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+
+        max-width: none;
+        margin: 0;
+    }
+
+    &:nth-child(odd) {
+        @media (min-width: $desktop) {
+            flex-direction: row-reverse;
+        }
+
+        .bigListItem__imageContainer::after {
+            left: calc(50% + 445px + 64px);
+            transform: translateX(-50%);
+        }
+    }
+
+    &:nth-child(even) {
+        @media (min-width: $desktop) {
+            flex-direction: row;
+        }
+
+        .bigListItem__imageContainer::after {
+            left: calc(50% - 445px - 64px);
+            transform: translateX(-50%);
+        }
+    }
+
+
+    &__imageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: $clr-gray-300;
+            border-radius: 50%;
+            top: 0;
+            z-index: -1;
+            display: none;
+
+            @media (min-width: $tablet) {
+                display: block;
+            }
+        }
+    }
+
+    &__image {
+        border-radius: 50%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+
+        @media (min-width: $tablet) {
+            gap: 2.5rem;
+        }
+
+        @media (min-width: $desktop) {
+            max-width: 450px;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        @media (min-width: $tablet) {
+            max-width: 460px;
+        }
+    }
+
+    &__text {
+        @media (min-width: $desktop) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}

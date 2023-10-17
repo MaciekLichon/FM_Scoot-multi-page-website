@@ -1,0 +1,47 @@
+@import '../../../styles/variables.scss';
+
+.smallListItem {
+    text-align: center;
+
+    @media (min-width: $tablet) {
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $desktop) {
+        max-width: 350px;
+        flex: 1;
+    }
+
+    &__graphics {
+        position: relative;
+        display: grid;
+        place-items: center;
+
+        &-image {
+            border-radius: 50%;
+        }
+
+        &-index {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background-color: $clr-yellow-dark;
+            display: grid;
+            place-items: center;
+            margin-top: -48px;
+        }
+    }
+
+    &__title {
+        margin-top: 1rem;
+
+        @media (min-width: $tablet) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__text {
+        margin-top: 1.5rem;
+    }
+}

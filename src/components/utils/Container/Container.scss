@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.container {
+    box-sizing: content-box;
+    max-width: 1110px;
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    &.wide {
+        @media (min-width: $tablet) {
+            padding: 0 2.5rem;
+        }
+    }
+
+    &.narrow {
+        @media (min-width: $tablet) {
+            padding: 0 6rem;
+        }
+    }
+}
+

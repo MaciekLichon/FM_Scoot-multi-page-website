@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+.jobs {
+    margin-bottom: 7.5rem;
+    overflow: hidden;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @media (min-width: $desktop) {
+            gap: 1.5rem;
+        }
+    }
+}
+

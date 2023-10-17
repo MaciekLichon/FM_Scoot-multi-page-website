@@ -1,0 +1,82 @@
+@import '../../../styles/variables.scss';
+
+.processItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    position: relative;
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
+        text-align: left;
+        gap: 5rem;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i})::after {
+                height: calc($i * 150%);
+            }
+        }
+
+        &:hover::after {
+            transform: scaleY(1);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        flex: 1;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i})::after {
+                height: 16px;
+                width: calc($i * 100%);
+            }
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &::after {
+        @media (min-width: $tablet) {
+            content: '';
+            position: absolute;
+            width: 16px;
+            background-color: $clr-yellow-light;
+            bottom: 70%;
+            left: 40px;
+            z-index: -1;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform $transition-lazy linear;
+        }
+
+        @media (min-width: $desktop) {
+            transform: scaleX(0);
+            transform-origin: left;
+            bottom: unset;
+            left: unset;
+            top: 40px;
+            right: 95%;
+        }
+    }
+
+    &__icon {
+        width: 56px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        
+        @media (min-width: $tablet) {
+            width: 96px;
+        }
+    }
+
+    &__text {
+        margin-top: 1.5rem;
+    }
+}
