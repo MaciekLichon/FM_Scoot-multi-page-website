@@ -2,6 +2,7 @@
 
 .faq {
     margin-bottom: 7.5rem;
+    overflow-x: hidden;
 
     @media (min-width: $desktop) {
         margin-bottom: 10rem;

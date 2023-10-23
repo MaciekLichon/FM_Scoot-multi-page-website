@@ -1,12 +1,30 @@
 import './Map.scss';
 
-import Button from '../../utils/Button/Button';
 import Container from '../../utils/Container/Container';
+import MapText from './MapText';
 import mapImage from '../../../assets/images/world-map-desktop.png';
 
-import React from 'react';
+import React, {useRef} from 'react';
+import { motion } from 'framer-motion';
 
 const Map: React.FC = () => {
+
+    const ref = useRef(null);
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { 
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.4
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 }
+    }
 
     return (
         <section className="map">
@@ -14,19 +32,20 @@ const Map: React.FC = () => {
 
                 <div className="map__world">
                     <img src={mapImage} alt="" />
-                    <div className="map__world-labels">
-                        <h4 className="map__world-labels-item" data-location="new york">New York</h4>
-                        <h4 className="map__world-labels-item" data-location="london">London</h4>
-                        <h4 className="map__world-labels-item" data-location="jakarta">Jakarta</h4>
-                        <h4 className="map__world-labels-item" data-location="yokohama">Yokohama</h4>
-                    </div>
+                    <motion.div 
+                        className="map__world-labels"
+                        ref={ref}
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <motion.h4 className="map__world-labels-item" data-location="new york" variants={itemVariants}>New York</motion.h4>
+                        <motion.h4 className="map__world-labels-item" data-location="london" variants={itemVariants}>London</motion.h4>
+                        <motion.h4 className="map__world-labels-item" data-location="jakarta" variants={itemVariants}>Jakarta</motion.h4>
+                        <motion.h4 className="map__world-labels-item" data-location="yokohama" variants={itemVariants}>Yokohama</motion.h4>
+                    </motion.div>
                 </div>
-
-                <div className="map__content">
-                    <h2 className="map__title">Your City Not Listed?</h2>
-                    <p className="map__text">If you'd like to see Scoot in your hometown, be sure to let us know. We track requests and plan launches based on demand. Feel free to message us by clicking the link or messaging us on social.</p>
-                    <Button to="" text="Message Us" />
-                </div>
+                <MapText />
             </Container>
         </section>
     );
