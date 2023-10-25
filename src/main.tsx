@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={'/FM_Scoot-multi-page-website/'}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
