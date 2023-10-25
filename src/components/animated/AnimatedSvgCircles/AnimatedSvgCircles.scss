@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.animatedCircles {
+  circle {
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        transition-delay: calc($i * 1s);
+      }
+    }
+  }
+
+  &.animatedCircles__visible {
+    circle {
+      opacity: 1;
+    }
+  }
+}

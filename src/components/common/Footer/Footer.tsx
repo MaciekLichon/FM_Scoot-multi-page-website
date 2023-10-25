@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../../utils/Container/Container';
 
-import logoWhite from '../../../assets/icons/logo-white.svg';
+import LogoWhite from '../../../assets/icons/logo-white.svg?react';
 
 
 const Footer: React.FC = () => {
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <Container type="wide">
                 <div className="footer__content">
                     <Link to="/">
-                        <img src={logoWhite} alt="logo"/>
+                        <LogoWhite />
                     </Link>
                     <div className="footer__links">
                         <Link to="/about" className="footer__links-item">About</Link>

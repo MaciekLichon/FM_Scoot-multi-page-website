@@ -1,6 +1,6 @@
 import Container from '../../utils/Container/Container';
 import './Navbar.scss';
-import logo from '../../../assets/icons/logo-dark.svg';
+import Logo from '../../../assets/icons/logo-dark.svg?react';
 
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                     <Link to="" className="nav__logo">
-                        <img src={logo} alt="logo"/>
+                        <Logo />
                     </Link>
                 </div>
             </Container>

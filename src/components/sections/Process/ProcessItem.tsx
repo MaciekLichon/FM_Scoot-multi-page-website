@@ -5,7 +5,7 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 
 import { IProcessItem } from '../../../data/data';
 
-const ProcessItem: React.FC<IProcessItem> = ({ icon, title, text }) => {
+const ProcessItem: React.FC<IProcessItem> = ({ Icon, title, text }) => {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -30,7 +30,7 @@ const ProcessItem: React.FC<IProcessItem> = ({ icon, title, text }) => {
             transition={{ duration: 0.5 }}
         >
             <div className="processItem__icon">
-                <img src={icon} alt="icon" />
+                <Icon />
             </div>
             <div className="processItem__content">
                 <h4 className="processItem__title">{title}</h4>

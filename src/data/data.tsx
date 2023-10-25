@@ -1,6 +1,6 @@
-import processIconOne from '../assets/icons/locate.svg';
-import processIconTwo from '../assets/icons/scooter.svg';
-import processIconThree from '../assets/icons/ride.svg';
+import processIconOne from '../assets/icons/locate.svg?react';
+import processIconTwo from '../assets/icons/scooter.svg?react';
+import processIconThree from '../assets/icons/ride.svg?react';
 
 import bigListHomeOne from '../assets/images/telemetry.jpg';
 import bigListHomeTwo from '../assets/images/near-you.jpg';
@@ -18,7 +18,7 @@ import smallListTwo from '../assets/images/our-integrity.jpg';
 import smallListThree from '../assets/images/our-community.jpg';
 
 export type IProcessItem = {
-    icon: string
+    Icon: React.FC<React.SVGProps<SVGSVGElement>>
     title: string
     text: string
 }
@@ -56,17 +56,17 @@ export type IFaqDataSet = {
 
 export const processData: IProcessItem[] = [
     {
-        icon: processIconOne,
+        Icon: processIconOne,
         title: 'Locate with app',
         text: 'Use the app to find the nearest scooter to you. We are continuously placing scooters in the areas with most demand, so one should never be too far away.'
     },
     {
-        icon: processIconTwo,
+        Icon: processIconTwo,
         title: 'Pick your scooter',
         text: 'We show the most important info for the scooters closest to you. So you know how much charge they have left and can see roughly how much it will cost.'
     },
     {
-        icon: processIconThree,
+        Icon: processIconThree,
         title: 'Enjoy the ride',
         text: 'Scan the QR code and the bike will unlock. Retract the cable lock, put on a helmet, and you’re off! Always lock bikes away from walkways and accessibility ramps.'
     },
