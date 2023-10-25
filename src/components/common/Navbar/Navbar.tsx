@@ -23,9 +23,9 @@ const Navbar: React.FC = () => {
                         <div>
                             <div>
                                 <div className="nav__links-items">
-                                    <Link to="/about" className="nav__links-item">About</Link>
-                                    <Link to="/locations" className="nav__links-item">Locations</Link>
-                                    <Link to="/careers" className="nav__links-item">Careers</Link>
+                                    <Link to="/about" className="nav__links-item" onClick={() => setOpen(!open)}>About</Link>
+                                    <Link to="/locations" className="nav__links-item" onClick={() => setOpen(!open)}>Locations</Link>
+                                    <Link to="/careers" className="nav__links-item" onClick={() => setOpen(!open)}>Careers</Link>
                                 </div>
                                 <Button to="" text="Get Scootin" />
                             </div>
